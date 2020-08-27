@@ -1,5 +1,8 @@
 package com.herasj.pm_taller1
 
+import android.graphics.Color
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.RippleDrawable
 import android.widget.ImageButton
 
 class SequenceCard {
@@ -11,12 +14,18 @@ class SequenceCard {
         this.imgButton = imgButton
     }
 
-    fun flip():Boolean {
-        if(this.valid){
-            this.imgButton.setBackgroundColor(333)
-            return this.valid
+    fun flip(rev: Boolean) {
+        if(rev){
+            this.imgButton.setBackgroundColor(Color.parseColor("#9C27B0"))
+            this.imgButton.setImageResource(0)
+        }else{
+            this.imgButton.setImageResource(R.drawable.idk)
+            this.imgButton.setBackgroundColor(Color.parseColor("#00BCD4"))
         }
-        return this.valid
+    }
+
+    fun setWrong() {
+        this.imgButton.setImageResource(R.drawable.x)
     }
 
     fun setValid(valid: Boolean) {
