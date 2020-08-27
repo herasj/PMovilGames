@@ -127,8 +127,8 @@ class SequenceGameFragment : Fragment(), View.OnClickListener {
         this.startLevel()
     }
 
-    override fun onClick(view: View?) {
-        when (view!!.id) {
+    override fun onClick(v: View?) {
+        when (v!!.id) {
             R.id.image1 -> {
                 handleOnClick(1)
             }
