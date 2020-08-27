@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -43,14 +44,14 @@ class MainFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
-        view.findViewById<ImageButton>(R.id.btnMemory).setOnClickListener(this)
-        view.findViewById<ImageButton>(R.id.btnMemory).setOnClickListener(this)
+        view.findViewById<Button>(R.id.btnMemory).setOnClickListener(this)
+        view.findViewById<Button>(R.id.btnSequence).setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
         when(v!!.id){
             R.id.btnMemory -> {
-                //aqui código
+                navController!!.navigate(R.id.action_mainFragment_to_memoryFragment)
             }
             R.id.btnSequence -> {
                 navController!!.navigate(R.id.action_mainFragment_to_sequenceGameFragment)

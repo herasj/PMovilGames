@@ -12,10 +12,18 @@
         <action
             android:id="@+id/action_mainFragment_to_sequenceGameFragment"
             app:destination="@id/sequenceGameFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_memoryFragment"
+            app:destination="@id/memoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/sequenceGameFragment"
         android:name="com.herasj.pm_taller1.SequenceGameFragment"
         android:label="fragment_sequence_game"
         tools:layout="@layout/fragment_sequence_game" />
+    <fragment
+        android:id="@+id/memoryFragment"
+        android:name="com.herasj.pm_taller1.MemoryFragment"
+        android:label="fragment_memory"
+        tools:layout="@layout/fragment_memory" />
 </navigation>
