@@ -215,7 +215,7 @@ class SequenceGameFragment : Fragment(), View.OnClickListener {
                     delay(500)
                     nivel++
                     acertadas = 0
-                    view!!.findViewById<TextView>(R.id.nivelText).text = "Nivel: ${nivel}"
+                    requireView()!!.findViewById<TextView>(R.id.nivelText).text = "Nivel: ${nivel}"
                     startLevel()
                 }
             } else {
@@ -228,14 +228,13 @@ class SequenceGameFragment : Fragment(), View.OnClickListener {
             } else {
                 btnList[index - 1].setWrong()
                 vidas--
-                view!!.findViewById<TextView>(R.id.vidasText).text = "Vidas: ${vidas}"
+                requireView()!!.findViewById<TextView>(R.id.vidasText).text = "Vidas: ${vidas}"
             }
         }
     }
 
     private fun startLevel() {
         seqList = idList.shuffled().slice((1..this.nivel))
-        Toast.makeText(view!!.context, seqList.toString(), Toast.LENGTH_SHORT).show()
         for (imgButton in btnList) {
             if (seqList.contains(imgButton.id)) {
                 imgButton.flip(true)
@@ -258,8 +257,8 @@ class SequenceGameFragment : Fragment(), View.OnClickListener {
     private fun gameOver() {
         nivel=2
         vidas=3
-        view!!.findViewById<TextView>(R.id.nivelText).text = "Nivel: ${nivel}"
-        view!!.findViewById<TextView>(R.id.vidasText).text = "Vidas: ${vidas}"
+        requireView()!!.findViewById<TextView>(R.id.nivelText).text = "Nivel: ${nivel}"
+        requireView()!!.findViewById<TextView>(R.id.vidasText).text = "Vidas: ${vidas}"
         startLevel()
     }
 
